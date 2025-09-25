@@ -109,13 +109,11 @@ def game():
     #Escolhe a palavra e a dica aleatoriamente
     choise = choice(words)
     word = choise[0].lower()
-    tip = choise[1]
     
     
     #Mostra as palavras para adivinhar
     letters = ['_' for v in word]
     print('')
-    print(f'\033[34mDica: {tip}\033[m')
     
     #Letras adivinhadas
     guessed_letters = []
@@ -173,6 +171,11 @@ def game():
 
 
 #código principal
-game()
-    
+if __name__ == "__main__":
+    game()
 
+Pagain = str(input('Deseja jogar denovo?: [s/n]'))
+if Pagain == 's':
+    game()
+else:
+    print('Você decidiu não jogar denovo')
